@@ -1,15 +1,20 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import { NextPage } from 'next';
+import Link from 'next/link';
+import { Categories } from '../components/Categories';
+import Layout from '../components/Layout';
+import { Newsletter } from '../components/Newsletter';
+import { Products } from '../components/Products';
+import { Slider } from '../components/Slider';
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
+const IndexPage: NextPage = () => (
+  <Layout>
+    <Slider />
+    <h2 className="text-4xl uppercase font-bold text-center">Popular Categories.</h2>
+    <Categories />
+    <h2 className="text-4xl uppercase font-bold text-center">Beloved products.</h2>
+    <Products />
+    <Newsletter />
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
