@@ -7,7 +7,7 @@ interface FooterProps {}
 
 export const Footer: React.FC<FooterProps> = ({}) => {
   return (
-    <footer className="flex gap-10" id="footer">
+    <footer className="flex flex-col gap-2 md:gap-8 md:flex-row" id="footer">
       <div className="flex-1 flex flex-col p-5">
         <h1 className="text-2xl font-semibold uppercase">Urban Fashion.</h1>
         <p className="my-5">
@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({}) => {
           </div>
         </div>
       </div>
-      <div className="flex-1 p-5">
+      <div className="hidden flex-1 p-5 md:block">
         <h3 className="font-semibold text-2xl uppercase">Useful Links.</h3>
         <ul className="flex flex-wrap mt-3">
           {usefulLinks.map((link) => (

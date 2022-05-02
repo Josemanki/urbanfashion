@@ -18,7 +18,7 @@ export const Slider: React.FC<SliderProps> = ({}) => {
   };
 
   return (
-    <div className="w-full h-screen flex relative overflow-hidden">
+    <div className="hidden w-full h-screen relative overflow-hidden md:flex">
       <div
         onClick={() => handleClick('left')}
         className="w-12 h-12 z-10 rounded-full bg-neutral-200 cursor-pointer flex items-center justify-center absolute top-0 bottom-0 m-auto left-4 opacity-50"

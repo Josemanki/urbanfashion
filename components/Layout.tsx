@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Layout = ({ children, title = 'Urban Fashion' }: Props) => (
-  <div className="flex flex-col min-h-[100vh]">
+  <div className="flex flex-col min-h-[100vh] overflow-hidden">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
