@@ -9,14 +9,24 @@
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
+    "axios": "^0.27.2",
+    "crypto-js": "^4.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.1",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-stripe-checkout": "^2.6.3",
+    "stripe": "^8.220.0"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "@types/stripe": "^8.0.417",
     "autoprefixer": "^10.4.5",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.24",
