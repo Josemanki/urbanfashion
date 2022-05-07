@@ -8,6 +8,7 @@ export interface IAbbreviatedProduct {
 }
 
 export interface IUser {
+  _id: string;
   username: string;
   email: string;
   password: string;
@@ -17,11 +18,13 @@ export interface IUser {
 export interface IProduct {
   title: string;
   desc: string;
+  _id: string;
   img: string;
   categories?: Types.Array<string>;
-  size?: string;
-  color?: string;
+  sizes?: Types.Array<string>;
+  colors?: Types.Array<string>;
   price: number;
+  inStock: boolean;
 }
 
 export interface IOrder {
@@ -45,4 +48,17 @@ export enum Status {
 
 export interface ExtendedRequest extends NextApiRequest {
   user: JwtPayload;
+}
+
+export interface ICartState {
+  products: IProduct[];
+  quantity: number;
+  price: number;
+}
+
+export interface ICartProduct extends IProduct {
+  quantity: number;
+  price: number;
+  color: string;
+  size: string;
 }

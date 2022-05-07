@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import Link from 'next/link';
 import { Categories } from '../components/Categories';
 import Layout from '../components/Layout';
 import { Newsletter } from '../components/Newsletter';

@@ -2,10 +2,13 @@ import { Badge } from '@material-ui/core';
 import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 import Link from 'next/link';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { AppState } from '../redux/store';
 
 interface NavbarProps {}
 
 export const Navbar: React.FC<NavbarProps> = ({}) => {
+  const cart = useSelector((state: AppState) => state.cart.quantity);
   return (
     <nav className="h-16">
       <div className="h-full py-2 flex items-center justify-between md:px-4">
@@ -32,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
           </Link>
           <div className="ml-4 md:ml-6">
             <Link href={'/cart'}>
-              <Badge badgeContent={4} color="primary">
+              <Badge badgeContent={cart} color="primary">
                 <ShoppingCartOutlined />
               </Badge>
             </Link>

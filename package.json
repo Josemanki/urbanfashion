@@ -9,6 +9,7 @@
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
+    "@reduxjs/toolkit": "^1.8.1",
     "axios": "^0.27.2",
     "crypto-js": "^4.1.1",
     "jsonwebtoken": "^8.5.1",
@@ -17,7 +18,9 @@
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^8.0.1",
     "react-stripe-checkout": "^2.6.3",
+    "redux-persist": "^6.0.0",
     "stripe": "^8.220.0"
   },
   "devDependencies": {

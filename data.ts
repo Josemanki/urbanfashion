@@ -27,16 +27,19 @@ export const categories = [
     id: 1,
     img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80',
     title: 'Sportswear',
+    cat: 'sportswear',
   },
   {
     id: 2,
     img: 'https://images.unsplash.com/photo-1527719327859-c6ce80353573?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80',
     title: 'Light Clothing',
+    cat: 'light-clothing',
   },
   {
     id: 3,
     img: 'https://images.unsplash.com/photo-1544022613-e87ca75a784a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80',
     title: 'Jackets',
+    cat: 'jackets',
   },
 ];
 

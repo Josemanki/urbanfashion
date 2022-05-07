@@ -7,6 +7,7 @@ export const handler = async (req: ExtendedRequest, res: NextApiResponse) => {
   switch (req.method) {
     case 'POST':
       const newProduct = new Product(req.body);
+      console.log(newProduct);
       try {
         const savedProduct = await newProduct.save();
         res.status(200).json(savedProduct);

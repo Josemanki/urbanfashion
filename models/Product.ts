@@ -8,9 +8,10 @@ const ProductSchema = new Schema<IProduct>(
     desc: { type: String, required: true },
     img: { type: String, required: true },
     categories: { type: [String] },
-    size: { type: String, required: true },
-    color: { type: String, required: true },
+    sizes: { type: [String], required: true },
+    colors: { type: [String], required: true },
     price: { type: Number, required: true },
+    inStock: { type: Boolean, default: true },
   },
   { timestamps: true }
 );
