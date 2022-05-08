@@ -9,6 +9,7 @@ interface NavbarProps {}
 
 export const Navbar: React.FC<NavbarProps> = ({}) => {
   const cart = useSelector((state: AppState) => state.cart.quantity);
+  const currentUser = useSelector((state: AppState) => state.user.currentUser);
   return (
     <nav className="h-16">
       <div className="h-full py-2 flex items-center justify-between md:px-4">
@@ -27,12 +28,18 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
           </Link>
         </div>
         <div className="flex-1 cursor-pointer flex items-center md:justify-end">
-          <Link href={'/register'}>
-            <a className="uppercase hidden ml-6 md:block">Register</a>
-          </Link>
-          <Link href={'/login'}>
-            <a className="uppercase ml-4 md:ml-6">Login</a>
-          </Link>
+          {currentUser ? (
+            <div className="uppercase">Logout</div>
+          ) : (
+            <div>
+              <Link href={'/register'}>
+                <a className="uppercase hidden ml-6 md:block">Register</a>
+              </Link>
+              <Link href={'/login'}>
+                <a className="uppercase ml-4 md:ml-6">Login</a>
+              </Link>
+            </div>
+          )}
           <div className="ml-4 md:ml-6">
             <Link href={'/cart'}>
               <Badge badgeContent={cart} color="primary">

@@ -67,9 +67,9 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({}) => {
             </div>
             <div className="flex items-center gap-1 md:w-2/4">
               <h3 className="text-xl font-light">Size</h3>
-              <select onChange={(e) => setSize(e.target.value.toLowerCase())} className="border p-1">
+              <select onChange={(e) => setSize(e.target.value.toLowerCase())} className="border p-1 uppercase">
                 {product.sizes.map((size) => (
-                  <option key={size}>{size.toUpperCase()}</option>
+                  <option key={size}>{size}</option>
                 ))}
               </select>
             </div>

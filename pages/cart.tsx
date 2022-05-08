@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { CartProductDetails } from '../components/CartProductDetails';
 import Layout from '../components/Layout';
 import { AppState } from '../redux/store';
@@ -9,6 +9,8 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import { userRequest } from '../utils/requestMethods';
 import { ICartProduct } from '../types/types';
+import Link from 'next/link';
+import { clearCart } from '../redux/cartSlice';
 
 const KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY;
 
@@ -19,6 +21,7 @@ const Cart: NextPage = () => {
   const [stripeToken, setStripeToken] = useState(null);
 
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const onToken = (token: Token) => {
     setStripeToken(token);
@@ -36,8 +39,8 @@ const Cart: NextPage = () => {
           amount: cart.total,
           address: payment.billing_details.address,
         });
+        dispatch(clearCart());
         router.push({ pathname: '/success', query: { orderId: res.data._id } });
-        // sessionStorage.removeItem('orderData');
       } catch (err) {
         console.log(err);
       }
@@ -57,20 +60,27 @@ const Cart: NextPage = () => {
     stripeToken && makeRequest();
   }, [stripeToken]);
 
+  const handleClick = () => {
+    dispatch(clearCart());
+  };
+
   return (
     <Layout>
       <div className="p-4 md:p-8">
         <h2 className="text-2xl uppercase font-light text-center">Your bag</h2>
         <div className="flex items-center justify-between mt-4">
-          <button className="p-3 font-semibold cursor-pointer uppercase border-2 border-neutral-800">
-            Continue shopping
-          </button>
+          <Link href="/">
+            <a className="p-3 font-semibold cursor-pointer uppercase border-2 border-neutral-800">Continue shopping</a>
+          </Link>
           <div className="hidden md:flex items-center justify-center">
             <span className="underline mx-5 md:block">Shopping Bag (2)</span>
             <span className="underline mx-5 md:block">Your Wishlist</span>
           </div>
-          <button className="p-3 text-white bg-neutral-800 border-2 border-neutral-800 font-semibold cursor-pointer uppercase">
-            Checkout now
+          <button
+            onClick={handleClick}
+            className="p-3 bg-white border-2 border-neutral-800 font-semibold cursor-pointer uppercase"
+          >
+            Clear cart
           </button>
         </div>
         <div className="flex justify-between my-8 md:flex-row">
@@ -84,7 +94,7 @@ const Cart: NextPage = () => {
               );
             })}
           </div>
-          <div className="w-full p-8 flex-1 flex flex-col max-h-[50vh] rounded-md border md:ml-8 md:w-auto">
+          <div className="w-full p-8 flex-1 flex flex-col max-h-[22rem] rounded-md border md:ml-8 md:w-auto">
             <h2 className="text-3xl uppercase font-thin">Order Summary</h2>
             <div className="flex flex-col gap-4 my-6">
               <div className="flex justify-between">

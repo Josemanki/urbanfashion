@@ -25,7 +25,10 @@ export const Slider: React.FC<SliderProps> = ({}) => {
       >
         <ArrowLeft />
       </div>
-      <div className={`h-full flex transition-all duration-1000 translate-x-[${slideIndex * -100}vw]`}>
+      <div
+        style={{ transform: `translateX(${slideIndex * -100}vw)` }}
+        className={`h-full flex transition-all duration-1000`}
+      >
         {sliderData.map((slideProps) => (
           <Slide {...slideProps} key={slideProps.id} />
         ))}
