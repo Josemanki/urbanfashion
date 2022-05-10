@@ -11,7 +11,7 @@ class Document extends NextDocument {
           <meta name="description" content="Clothing store with the latest fashion trends." />
           <meta name="keywords" content="ecommerce, webshop, clothing" />
           <meta name="robots" content="index, follow" />
-          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
           <meta name="language" content="English" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

@@ -1,6 +1,6 @@
 import { Check } from '@material-ui/icons';
 import { NextPage } from 'next';
-import { Head } from 'next/document';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
