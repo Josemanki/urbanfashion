@@ -1,9 +1,11 @@
 import { NextApiResponse } from 'next';
 import Order from '../../../models/Order';
 import { ExtendedRequest } from '../../../types/types';
+import dbConnect from '../../../utils/dbConnect';
 import verifyToken, { verifyTokenAndAdmin } from '../../../utils/verifyToken';
 
 export const handler = async (req: ExtendedRequest, res: NextApiResponse) => {
+  await dbConnect();
   switch (req.method) {
     case 'GET':
       const date = new Date();

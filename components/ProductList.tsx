@@ -2,9 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { Products } from './Products';
 
-interface ProductListProps {}
-
-export const ProductList: React.FC<ProductListProps> = () => {
+export const ProductList: React.FC = () => {
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState('newest');
 
@@ -20,12 +18,12 @@ export const ProductList: React.FC<ProductListProps> = () => {
 
   return (
     <div>
-      <h2 className="m-8 text-4xl font-bold capitalize">{router.query.cat}</h2>
+      <h2 className="m-8 text-4xl font-bold capitalize">{router.query.cat ?? 'Products'}</h2>
       <div className="flex flex-wrap justify-around md:justify-between">
         <div className="flex flex-col w-2/5 text-xl font-semibold gap-5 items-start md:m-8 md:flex-row md:items-center">
           <span>Filter Products:</span>
           <select
-            name="color"
+            name="colors"
             id="color"
             onChange={handleFilters}
             className="border border-neutral-700 py-1 px-2 w-full md:w-auto"
@@ -39,7 +37,7 @@ export const ProductList: React.FC<ProductListProps> = () => {
             <option>Green</option>
           </select>
           <select
-            name="size"
+            name="sizes"
             id="size"
             onChange={handleFilters}
             className="border border-neutral-700 py-1 px-2 w-full md:w-auto"

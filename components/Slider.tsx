@@ -10,7 +10,6 @@ export const Slider: React.FC<SliderProps> = ({}) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction: 'left' | 'right') => {
     if (direction === 'left') {
-      console.log('clicked');
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
     } else {
       setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);

@@ -1,24 +1,27 @@
 export const sliderData = [
   {
     id: 1,
-    title: 'Summer sale',
-    description: "Don't miss out on our summer sale! Get flat 30% discount on new arrivals",
+    title: 'Top sale',
+    description: "Don't miss out on our tops sale! Get flat 30% discount on new arrivals",
     img: 'https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
     cta: 'Shop now',
+    url: 'products/tops',
   },
   {
     id: 2,
     title: 'Spring sale',
-    description: "Don't miss out on our spring sale! Get flat 30% discount on new arrivals",
+    description: "Our dresses offers might be the ones you're just looking for!",
     img: 'https://images.unsplash.com/photo-1603217040830-34473db521a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80',
     cta: 'Shop now',
+    url: 'products/dresses',
   },
   {
     id: 3,
-    title: 'Fall sale',
-    description: "Don't miss out on our fall sale! Get flat 30% discount on new arrivals",
+    title: 'Mens Fashion',
+    description: "Get that awesome shirt you've been thinking about!",
     img: 'https://images.unsplash.com/photo-1536766820879-059fec98ec0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80',
     cta: 'Shop now',
+    url: 'products/men',
   },
 ];
 
@@ -73,19 +76,15 @@ export const popularProducts = [
 export const usefulLinks = [
   {
     title: 'Home',
-    url: '#footer',
+    url: '/',
   },
   {
     title: 'Mens Fashion',
-    url: '#footer',
+    url: '/products/men',
   },
   {
     title: 'Womens Fashion',
-    url: '#footer',
-  },
-  {
-    title: 'Accessories',
-    url: '#footer',
+    url: '/products/women',
   },
   {
     title: 'Order Tracking',
@@ -97,7 +96,7 @@ export const usefulLinks = [
   },
   {
     title: 'Cart',
-    url: '#footer',
+    url: '/cart',
   },
   {
     title: 'My Account',

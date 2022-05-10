@@ -3,8 +3,10 @@ import verifyToken, { verifyTokenAndAuthorization } from '../../../utils/verifyT
 import { ExtendedRequest } from '../../../types/types';
 import User from '../../../models/User';
 import CryptoJS from 'crypto-js';
+import dbConnect from '../../../utils/dbConnect';
 
 export const handler = async (req: ExtendedRequest, res: NextApiResponse) => {
+  await dbConnect();
   switch (req.method) {
     case 'PUT':
       if (req.body.password) {

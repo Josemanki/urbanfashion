@@ -1,8 +1,10 @@
 import { NextApiResponse } from 'next';
 import { ExtendedRequest, IProduct } from '../../../../types/types';
 import Product from '../../../../models/Product';
+import dbConnect from '../../../../utils/dbConnect';
 
 export const handler = async (req: ExtendedRequest, res: NextApiResponse) => {
+  await dbConnect();
   const qNew = req.query.new;
   const qCategory = req.query.category;
   switch (req.method) {

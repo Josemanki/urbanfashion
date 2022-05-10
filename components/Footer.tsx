@@ -33,11 +33,11 @@ export const Footer: React.FC<FooterProps> = ({}) => {
         <h3 className="font-semibold text-2xl uppercase">Useful Links.</h3>
         <ul className="flex flex-wrap mt-3">
           {usefulLinks.map((link) => (
-            <Link href={link.url} key={link.title}>
-              <li className="w-2/4 mt-2">
+            <li className="w-2/4 mt-2" key={link.title}>
+              <Link href={link.url} key={link.title}>
                 <a>{link.title}</a>
-              </li>
-            </Link>
+              </Link>
+            </li>
           ))}
         </ul>
       </div>

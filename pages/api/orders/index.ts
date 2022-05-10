@@ -2,8 +2,10 @@ import { NextApiResponse } from 'next';
 import { ExtendedRequest } from '../../../types/types';
 import Order from '../../../models/Order';
 import verifyToken from '../../../utils/verifyToken';
+import dbConnect from '../../../utils/dbConnect';
 
 export const handler = async (req: ExtendedRequest, res: NextApiResponse) => {
+  await dbConnect();
   switch (req.method) {
     case 'POST':
       const newOrder = new Order(req.body);

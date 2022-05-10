@@ -1,8 +1,10 @@
 import { NextApiResponse } from 'next';
 import { ExtendedRequest } from '../../../../types/types';
 import Product from '../../../../models/Product';
+import dbConnect from '../../../../utils/dbConnect';
 
 export const handler = async (req: ExtendedRequest, res: NextApiResponse) => {
+  await dbConnect();
   switch (req.method) {
     case 'GET':
       try {

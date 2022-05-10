@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 
 const Success: NextPage = () => {
   const router = useRouter();
-  console.log(router.query);
   const orderId = router.query.orderId;
 
   return (

@@ -17,7 +17,7 @@ const Login: NextPage = () => {
 
   useEffect(() => {
     currentUser && router.push('/');
-  }, [currentUser]);
+  }, [currentUser, router]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -55,7 +55,7 @@ const Login: NextPage = () => {
             <a className="underline uppercase text-xs">Forgot your password?</a>
           </Link>
           <Link href={'#'}>
-            <a className="underline uppercase text-xs">Don't have an account yet? Register now!</a>
+            <a className="underline uppercase text-xs">Don&apos;t have an account yet? Register now!</a>
           </Link>
         </div>
       </div>

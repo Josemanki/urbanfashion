@@ -2,8 +2,10 @@ import { NextApiResponse } from 'next';
 import verifyToken, { verifyTokenAndAdmin, verifyTokenAndAuthorization } from '../../../utils/verifyToken';
 import { ExtendedRequest } from '../../../types/types';
 import Order from '../../../models/Order';
+import dbConnect from '../../../utils/dbConnect';
 
 export const handler = async (req: ExtendedRequest, res: NextApiResponse) => {
+  await dbConnect();
   switch (req.method) {
     case 'PUT':
       try {

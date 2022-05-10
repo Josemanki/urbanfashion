@@ -1,10 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import dbConnect from '../../../utils/dbConnect';
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-export const handler = (req: NextApiRequest, res: NextApiResponse) => {
+export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  await dbConnect();
   switch (req.method) {
     case 'POST':
-      console.log(`Received payload of ${req.body.tokenId} and ${req.body.amount}`);
       stripe.charges.create(
         {
           source: req.body.tokenId,

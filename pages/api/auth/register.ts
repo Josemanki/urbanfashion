@@ -1,13 +1,17 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import User from '../../../models/User';
 import CryptoJS from 'crypto-js';
+import dbConnect from '../../../utils/dbConnect';
 
 export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  await dbConnect();
   switch (req.method) {
     case 'POST':
       const newUser = new User({
         username: req.body.username,
         email: req.body.email,
+        name: req.body.name,
+        lastName: req.body.lastName,
         password: CryptoJS.AES.encrypt(req.body.password, process.env.PASSWORD_SECRET).toString(),
       });
 

@@ -10,6 +10,8 @@ export interface IAbbreviatedProduct {
 export interface IUser {
   _id: string;
   username: string;
+  name: string;
+  lastName: string;
   email: string;
   password: string;
   isAdmin: boolean;
