@@ -12,13 +12,6 @@ const Success: NextPage = () => {
     <>
       <Head>
         <title>Urban Fashion | Success</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="title" content="Urban Fashion" />
-        <meta name="description" content="Clothing store with the latest fashion trends." />
-        <meta name="keywords" content="ecommerce, webshop, clothing" />
-        <meta name="robots" content="index, follow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
       </Head>
       <div className="h-screen w-screen bg-register-img bg-cover flex items-center justify-center">
         <div className="bg-white flex flex-col justify-center items-center w-4/5 p-10 gap-4 md:w-2/5">
