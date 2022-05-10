@@ -4,7 +4,7 @@ import { IOrder } from '../types/types';
 
 const OrderSchema = new Schema<IOrder>(
   {
-    userId: { type: String, required: true },
+    userId: { type: String },
     products: [
       {
         productId: {

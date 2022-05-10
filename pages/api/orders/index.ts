@@ -21,4 +21,4 @@ export const handler = async (req: ExtendedRequest, res: NextApiResponse) => {
   }
 };
 
-export default verifyToken(handler);
+export default handler;

@@ -29,16 +29,28 @@ const Cart: NextPage = () => {
 
   useEffect(() => {
     const createOrder = async (payment) => {
+      let res;
       try {
-        const res = await userRequest.post('/orders', {
-          userId: currentUser._id,
-          products: cart.products.map((item: ICartProduct) => ({
-            productId: item._id,
-            quantity: item.quantity,
-          })),
-          amount: cart.total,
-          address: payment.billing_details.address,
-        });
+        if (currentUser) {
+          res = await userRequest.post('/orders', {
+            userId: currentUser._id,
+            products: cart.products.map((item: ICartProduct) => ({
+              productId: item._id,
+              quantity: item.quantity,
+            })),
+            amount: cart.total,
+            address: payment.billing_details.address,
+          });
+        } else {
+          res = await userRequest.post('/orders', {
+            products: cart.products.map((item: ICartProduct) => ({
+              productId: item._id,
+              quantity: item.quantity,
+            })),
+            amount: cart.total,
+            address: payment.billing_details.address,
+          });
+        }
         dispatch(clearCart());
         router.push({ pathname: '/success', query: { orderId: res.data._id } });
       } catch (err) {
@@ -130,6 +142,7 @@ const Cart: NextPage = () => {
                 shippingAddress
                 description={`Your total is ${cart.total}€`}
                 amount={cart.total * 100}
+                currency="EUR"
                 token={onToken}
                 stripeKey={KEY}
               >
