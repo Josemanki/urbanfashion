@@ -11,7 +11,7 @@ const IndexPage: NextPage = () => (
     <h2 className="text-4xl mt-8 uppercase font-bold text-center">Popular Categories.</h2>
     <Categories />
     <h2 className="text-4xl uppercase font-bold text-center">Beloved products.</h2>
-    <Products />
+    <Products cat={'index'} />
     <Newsletter />
   </Layout>
 );

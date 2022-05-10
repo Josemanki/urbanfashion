@@ -23,9 +23,12 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
       <div className="h-full py-2 flex items-center justify-between md:px-4">
         <div className="flex flex-1 items-center">
           {/* <span className="hidden md:block text-md cursor-pointer">EN</span> */}
-          <div className="border border-regular-700 flex items-center justify-center ml-6 p-1">
-            <input placeholder="Search" className="w-14 md:w-auto" type="text" name="searchbar" id="searchbar" />
-            <Search style={{ color: 'gray', fontSize: 20 }} />
+          <div className="flex items-center justify-center p-1">
+            {/* <input placeholder="Search" className="w-14 md:w-auto" type="text" name="searchbar" id="searchbar" />
+            <Search style={{ color: 'gray', fontSize: 20 }} /> */}
+            <Link href={'/products'}>
+              <a className="underline uppercase text-center">Browse Products</a>
+            </Link>
           </div>
         </div>
         <div className="flex-1">

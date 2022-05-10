@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import { ProductList } from '../../components/ProductList';
 
-export const ProductsPage: NextPage = ({}) => {
+export const ProductsPage: NextPage = () => {
   return (
     <Layout>
       <ProductList />

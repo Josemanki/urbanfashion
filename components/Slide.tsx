@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -14,8 +15,9 @@ export const Slide: React.FC<SlideProps> = ({ id, title, description, img, cta, 
   return (
     <div className="flex items-center w-screen h-screen text-uppercase">
       <div className="flex flex-1 items-center h-full">
-        <div className="h-full flex-1">
-          <img src={img} className="h-full object-cover" />
+        <div className="relative h-full w-full flex-1">
+          <Image src={img} layout="fill" objectFit="cover" />
+          {/* <img src={img} className="h-full object-cover" /> */}
         </div>
         <div className="flex-1 px-16">
           <h2 className="text-7xl font-bold">{title}</h2>

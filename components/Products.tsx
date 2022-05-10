@@ -17,7 +17,9 @@ export const Products: React.FC<ProductsProps> = ({ cat, filters, sort }) => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get(cat ? `/api/products/find?category=${cat}` : '/api/products/find');
+        const res = await axios.get(
+          cat && cat != 'index' ? `/api/products/find?category=${cat}` : '/api/products/find'
+        );
         if (res.data.length === 0) {
           router.push('/');
         } else {
@@ -41,19 +43,25 @@ export const Products: React.FC<ProductsProps> = ({ cat, filters, sort }) => {
   }, [sort]);
 
   useEffect(() => {
-    cat &&
+    cat !== 'index' &&
       setFilteredProducts(
         products.filter((item) => Object.entries(filters).every(([key, value]) => item[key].includes(value)))
       );
   }, [cat, filters, products]);
 
+  const generateProducts = () => {
+    if (cat === 'index') {
+      return products.slice(0, 8).map((productProps) => <Product {...productProps} key={productProps._id} />);
+    }
+    if (cat) {
+      return filteredProducts.map((productProps) => <Product {...productProps} key={productProps._id} />);
+    }
+    return filteredProducts.map((productProps) => <Product {...productProps} key={productProps._id} />);
+  };
+
   return (
     <>
-      <div className="p-6 flex flex-wrap justify-between gap-4">
-        {cat
-          ? filteredProducts.map((productProps) => <Product {...productProps} key={productProps._id} />)
-          : products.slice(0, 8).map((productProps) => <Product {...productProps} key={productProps._id} />)}
-      </div>
+      <div className="p-6 flex flex-wrap justify-between gap-4">{generateProducts()}</div>
     </>
   );
 };

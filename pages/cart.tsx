@@ -108,19 +108,19 @@ const Cart: NextPage = () => {
               <div className="flex flex-col gap-4 my-6">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span>{cart.total} €</span>
+                  <span className="whitespace-nowrap">{cart.total} €</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Estimated Shipping</span>
-                  <span>5.90 €</span>
+                  <span className="whitespace-nowrap">5.90 €</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Shipping Discount</span>
-                  <span>-5.90 €</span>
+                  <span className="whitespace-nowrap">-5.90 €</span>
                 </div>
                 <div className="flex justify-between text-2xl font-medium">
                   <span>Total</span>
-                  <span>{cart.total} €</span>
+                  <span className="whitespace-nowrap">{cart.total} €</span>
                 </div>
               </div>
               <StripeCheckout
