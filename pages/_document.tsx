@@ -7,7 +7,6 @@ class Document extends NextDocument {
       <Html>
         <Head>
           <meta name="title" content="Urban Fashion" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Clothing store with the latest fashion trends." />
           <meta name="keywords" content="ecommerce, webshop, clothing" />
           <meta name="robots" content="index, follow" />

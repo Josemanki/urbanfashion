@@ -59,7 +59,7 @@ const Login: NextPage = () => {
             <Link href={'#'}>
               <a className="underline uppercase text-xs">Forgot your password?</a>
             </Link>
-            <Link href={'#'}>
+            <Link href={'/register'}>
               <a className="underline uppercase text-xs">Don&apos;t have an account yet? Register now!</a>
             </Link>
           </div>

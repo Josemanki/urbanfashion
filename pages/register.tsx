@@ -18,7 +18,7 @@ const Register: NextPage = () => {
     if (form['password'] !== form['passwordConfirm']) {
       setError('Passwords do not match!');
     } else {
-      await publicRequest.post('auth/register', form);
+      await publicRequest.post('/auth/register', form);
       e.target.reset();
       router.push('/login');
     }
